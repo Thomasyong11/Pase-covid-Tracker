@@ -18,10 +18,11 @@ app.get("/api/v1", function (req, res) {
       }
       res.status(200).json(docs);
     });
+    return;
   }
 
-  // const firstChar = country[0].toUpperCase();
-  // country = firstChar + country.slice(1);
+  const firstChar = country[0].toUpperCase();
+  country = firstChar + country.slice(1);
 
   Case.find({ Country: country }, (err, docs) => {
     if (err) {
